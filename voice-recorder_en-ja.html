@@ -292,44 +292,6 @@ return (
                                             </div>
                                         )}
                                         
-                                        {transcription.detectedLanguage && (
-                                            <div className="mt-3 flex items-center gap-4 text-sm text-gray-500">
-                                                <span>偵測語言: <strong>{transcription.detectedLanguage}</strong></span>
-                                                {transcription.wasTranslated && (
-                                                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">
-                                                        ✓ 已翻譯
-                                                    </span>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-
-                                {!isRecording && !audioBlob && !transcription && (
-                                    <div className="mt-8 p-6 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl border-2 border-amber-200">
-                                        <h3 className="font-semibold text-amber-800 mb-3 text-lg">💡 使用步驟:</h3>
-                                        <ol className="space-y-2 text-amber-700">
-                                            <li className="flex items-start gap-2">
-                                                <span className="font-bold min-w-6">1.</span>
-                                                <span>點擊「開始錄音」按鈕並允許麥克風權限</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="font-bold min-w-6">2.</span>
-                                                <span>說出你想要轉錄的內容 (可使用中文、英文、日文等任何語言)</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="font-bold min-w-6">3.</span>
-                                                <span>點擊「停止錄音」完成錄製</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="font-bold min-w-6">4.</span>
-                                                <span>可以播放預覽,確認無誤後點擊「送出轉錄」</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="font-bold min-w-6">5.</span>
-                                                <span>等待 AI 處理,即可看到轉錄文字!</span>
-                                            </li>
-                                        </ol>
                                     </div>
                                 )}
                             </div>
