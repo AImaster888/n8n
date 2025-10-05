@@ -292,19 +292,6 @@ return (
                                             </div>
                                         )}
                                         
-                                        {transcription.detectedLanguage && (
-                                            <div className="mt-3 flex items-center gap-4 text-sm text-gray-500">
-                                                <span>偵測語言: <strong>{transcription.detectedLanguage}</strong></span>
-                                                {transcription.wasTranslated && (
-                                                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">
-                                                        ✓ 已翻譯
-                                                    </span>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-
                                 {!isRecording && !audioBlob && !transcription && (
                                     <div className="mt-8 p-6 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl border-2 border-amber-200">
                                         <h3 className="font-semibold text-amber-800 mb-3 text-lg">💡 使用步驟:</h3>
