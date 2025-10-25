@@ -400,16 +400,16 @@
                 // 隱藏載入動畫
                 document.getElementById('loading').style.display = 'none';
 
-                // 顯示結果 (這裡是修正「顯示編號」的地方)
+                // 顯示結果
                 if (result.status === 'success') {
                     stats.success++;
                     showResult(
                         'success',
                         '✅ 報到成功！',
-                        `編號：${result.報到編號 || 'N/A'}\n` +
-                        `姓名：${result.userName || '未提供'}\n` +
-                        `單位：${result.userDepartment || '未提供'}\n` +
-                        `時間：${result.check_in_time || new Date().toLocaleString('zh-TW')}`
+                        `編號：${result.報到編號 || result.報名編號 || 'N/A'}\n` +
+                        `姓名：${result.姓名 || '未提供'}\n` +
+                        `單位：${result.單位 || '未提供'}\n` +
+                        `時間：${result.報到時間 || new Date().toLocaleString('zh-TW')}`
                     );
                     playSound('success');
                 } else if (result.status === 'duplicate') {
@@ -417,9 +417,10 @@
                     showResult(
                         'duplicate',
                         '⚠️ 重複報到',
-                        `編號：${result.報到編號 || 'N/A'}\n` +
-                        `姓名：${result.userName || '未提供'}\n` +
-                        `上次報到：${result.lastCheckInTime || '未記錄'}`
+                        `編號：${result.報到編號 || result.報名編號 || 'N/A'}\n` +
+                        `姓名：${result.姓名 || '未提供'}\n` +
+                        `單位：${result.單位 || '未提供'}\n` +
+                        `上次報到：${result.報到時間 || '未記錄'}`
                     );
                     playSound('duplicate');
                 } else {
